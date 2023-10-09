@@ -1,0 +1,53 @@
+# Automation Controller Nodes
+[automationcontroller]
+{{ pg_host }}
+
+# Automation Hub Nodes
+[automationhub]
+{{ automationhub_pg_host }}
+
+[all:vars]
+admin_password={{ admin_password }}
+
+pg_host={{ pg_host }}
+pg_port={{ pg_port }}
+
+pg_database={{ pg_database }}
+pg_username={{ pg_username }}
+pg_password={{ pg_password }}
+pg_sslmode={{ pg_sslmode }}  # set to 'verify-full' for client-side enforced SSL
+
+# Execution Environment Configuration
+# Credentials for container registry to pull execution environment images from,
+# registry_username and registry_password are required for registry.redhat.io
+#
+# When deployed with Automation Hub:
+# - The installer will push execution environment images to Automation Hub and
+#   configure Automation Controller to pull images from the Hub registry.
+# - To make Hub to be the only registry to pull execution environment images from,
+#   set 'ee_from_hub_only' to True. This is set to True by default when bundle
+#   installer is used.
+
+registry_url='registry.redhat.io'
+registry_username=''
+registry_password=''
+ee_from_hub_only=True
+
+# If you wish to add Ansible Engine 2.9 execution environment, set the following variable to true.
+# However this is only available for x86_64 architecture.
+
+ee_29_enabled=True
+
+# Receptor Configuration
+receptor_listener_port=27199
+
+# Automation Hub Configuration
+automationhub_admin_password={{ automationhub_admin_password }}
+
+automationhub_pg_host={{ automationhub_pg_host }}
+automationhub_pg_port={{ automationhub_pg_port }}
+
+automationhub_pg_database={{ automationhub_pg_database }}
+automationhub_pg_username={{ automationhub_pg_username }}
+automationhub_pg_password={{ automationhub_pg_password }}
+automationhub_pg_sslmode={{ automationhub_pg_sslmode }}

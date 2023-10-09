@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  role_name: aap
+  author: Paul Wetering <paul.wetering@hcs-company.com>
+  company: HCS Company
+  license: GPLv3
+
+  # Git info
+  issue_tracker_url: https://github.com/cusux/aap/issues
+  github_branch: master
+  description: Installs AAP with Automation Hub.
+
+  # Ansible version info
+  min_ansible_version: "2.10"
+
+  # Applicable platforms info
+  platforms:
+    - name: EL
+      versions:
+        - all
+
+  # Role tag info
+  galaxy_tags:
+    - automation
+    - ansible
+
+dependencies: []
+
+# Roles collections
+collections:
+  - ansible.builtin
+
+...
